@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import DatePicker from "react-datepicker";
+// import DatePicker from "react-datepicker";
 import TrainingBotGIF from "../../../img/trainingBot.gif";
 
 //Styles
@@ -102,9 +102,9 @@ class AssignMemberPage extends React.Component {
   };
 
   handleDateChange = date => {
-    let d = date;
+    console.log(date);
     this.setState({
-      start_date: d.toISOString()
+      start_date: new Date(date)
     });
   };
 
@@ -141,9 +141,10 @@ class AssignMemberPage extends React.Component {
     return filteredSeries.map(series => {
       return (
         <MenuItem
+          key={series.id} //uuid to be implemented
           name="trainingSeriesID"
           label={`${series.title}`}
-          value={series.training_series_id}
+          value={series.id}
         >
           {series.title}
         </MenuItem>
@@ -160,12 +161,18 @@ class AssignMemberPage extends React.Component {
             Assign Training Series
           </Typography>
           <div className={classes.datePicker}>
-            <DatePicker
+            <input
+              type="text"
+              name="start_date"
+              value={this.state.start_date}
+              onChange={this.handleChange}
+            />
+            {/* <DatePicker
               inline
               minDate={new Date()}
               selected={this.state.start_date}
               onChange={this.handleDateChange}
-            />
+            /> */}
           </div>
           <form
             variant="body1"
@@ -180,7 +187,7 @@ class AssignMemberPage extends React.Component {
               <Select
                 value={this.state.training_series_id}
                 onChange={this.handleChange}
-                name="trainingSeriesID"
+                name="training_series_id"
               >
                 {this.props.location.state.assignments &&
                   this.renderTrainingSeriesInDropDown()}
@@ -191,7 +198,7 @@ class AssignMemberPage extends React.Component {
                 disabled={
                   this.state.isRouting === true ||
                   this.state.training_series_id === undefined
-                    ? "true"
+                    ? true
                     : null
                 }
                 className={classes.assignButton}

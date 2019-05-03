@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import logo from "../../../img/training-bot.svg";
 import "../Progress/loading.css";
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button"; //commented out temporarily to prevent warnings
 
 //Styling
 import {

@@ -50,6 +50,7 @@ export const getTeamMembers = id => dispatch => {
 };
 
 export const addTeamMember = teamMember => dispatch => {
+  console.log("Team member to be added: ", teamMember);
   dispatch({ type: ADD_MEMBER_START });
   axios
     .post(`${baseUrl}/team-members`, teamMember)

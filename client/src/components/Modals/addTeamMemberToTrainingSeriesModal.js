@@ -80,6 +80,7 @@ class UserModal extends React.Component {
   componentDidMount() {
     let d = new Date();
     let formattedDate = d.toISOString();
+    console.log(typeof formattedDate, formattedDate);
     this.setState({
       trainingSeriesID: this.props.trainingSeriesID,
       startDate: formattedDate
