@@ -466,7 +466,7 @@ class TrainingSeriesPosts extends React.Component {
             ) : (
               <ListStyles className={classes.listStyle}>
                 {sortedPosts.map(post => (
-                  <ListItemContainer>
+                  <ListItemContainer key={post.id}>
                     <ListItem key={post.id} className={classes.listItem}>
                       <ListItemText
                         primary={post.message_name}
@@ -578,9 +578,6 @@ const TrainingSeriesTitle = styled.div`
 
 const mapStateToProps = state => ({
   isLoading: state.messagesReducer.isLoading,
-  //singleTrainingSeries: state.trainingSeriesReducer.trainingSeries.filter(
-  //   series => series.id === this.props.match.params.id
-  // ),
   posts: state.messagesReducer.messages,
   assignments: state.trainingSeriesReducer.assignments,
   trainingSeries: state.trainingSeriesReducer.trainingSeries,
