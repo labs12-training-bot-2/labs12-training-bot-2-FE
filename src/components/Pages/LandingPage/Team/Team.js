@@ -155,7 +155,7 @@ class Team extends React.Component {
                 <PortfolioLink
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://github.com/TomHessburg"
+                  href="https://thomashessburg.com/"
                 >
                   Portfolio Site
                 </PortfolioLink>
@@ -181,10 +181,7 @@ class Team extends React.Component {
                 <AdamsIMG src={Adam} alt="Adam McKenney" />
                 <Typography variant="title">Adam McKenney</Typography>
                 <p>Full-Stack Developer</p>
-                <PortfolioLink
-                  target="_blank"
-                  href="https://github.com/DaftBeowulf"
-                >
+                <PortfolioLink target="_blank" href="https://adammckenney.dev/">
                   Portfolio Site
                 </PortfolioLink>
 
