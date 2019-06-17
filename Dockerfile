@@ -4,8 +4,6 @@ WORKDIR /app
 COPY . ./
 RUN yarn
 RUN yarn build
-# note: build will crash without setting absolute path variable
-# but since that will be deprecated soon, needs to be adjusted in app with config file anyway
 
 # stage 2: the production environment
 FROM nginx:alpine

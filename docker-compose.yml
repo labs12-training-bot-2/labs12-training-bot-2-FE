@@ -1,0 +1,49 @@
+version: "3"
+
+#create FE and BE services
+services:
+  app-frontend:
+    image: daftbeowulf/training-bot-frontend
+    environment:
+      - "REACT_APP_LOCAL="
+      - "REACT_APP_API="
+      - "REACT_APP_PROD="
+    ports:
+      - "3000:80"
+    depends_on:
+      - app-backend
+    build: .
+
+  postgres:
+    image: postgres:11.3-alpine
+    environment:
+      - "POSTGRES_USER="
+      - "POSTGRES_DB="
+      - "POSTGRES_PASSWORD="
+    ports:
+      - "5432"
+
+  app-backend:
+    image: daftbeowulf/training-bot-backend
+    environment:
+      - "DB_LOCAL="
+      - "DB_LOCAL_USER="
+      - "STRIPE_SECRET_KEY="
+      - "STRIPE_PUBLIC_KEY="
+      - "STRIPE_TEST_SECRET_KEY="
+      - "STRIPE_TEST_PUBLIC_KEY="
+      - "SLACK_TOKEN="
+      - "SLACK_CLIENT_ID="
+      - "SLACK_SECRET="
+      - "APP_BASE_URL="
+      - "SLACK_VERIFICATION="
+      - "TWILIO_NUMBER="
+      - "TWILIO_SID="
+      - "TWILIO_TOKEN="
+      - "SENDGRID_API_KEY="
+    command: "knex migrate:rollback && knex migrate:latest && knex seed:run"
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - "5000:8080"
