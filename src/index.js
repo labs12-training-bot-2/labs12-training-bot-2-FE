@@ -9,13 +9,15 @@ Resource:
 https://medium.com/@ktruong008/absolute-imports-with-create-react-app-4338fbca7e3d
 */
 
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import Routes from "./BaseRoutes";
-import "./index.css";
+import Routes from './BaseRoutes';
+import './index.css';
 
-import dotenv from "dotenv";
-dotenv.config();
+if (process.env.NODE_ENV === 'development') {
+  const dotenv = require('dotenv');
+  dotenv.config();
+}
 
-ReactDOM.render(<Routes />, document.getElementById("root"));
+ReactDOM.render(<Routes />, document.getElementById('root'));
