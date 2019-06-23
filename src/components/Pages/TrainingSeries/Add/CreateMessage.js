@@ -135,13 +135,13 @@ class CreateMessage extends React.Component {
               <ExpansionPanel>
                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                   <Typography className={classes.heading}>
-                    What is "Days From Start"?
+                    What is "Days from Start"?
                   </Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <Typography>
                     This is the number of days after a training series starts
-                    that a message will be sent. For example, if you assign a
+                    that this message will be sent. For example, if you assign a
                     team member to this training series with a start date of
                     today, and you set this message's "days from start" number
                     to 3, it will send out on {sendDay}.
