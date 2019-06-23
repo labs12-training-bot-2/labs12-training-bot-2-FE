@@ -89,6 +89,7 @@ function Dashboard(props) {
             section="Team Members"
             handleAdd={() => history.push("/home/create-team-member")}
             isSearching={true}
+            limit={8}
           />
         )}
 

@@ -15,7 +15,13 @@ function Tab({ user_id, getFiltered, getTeamMembers, teamMembers, classes }) {
   }, [getTeamMembers, user_id]);
 
   return (
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "space-evenly"
+      }}
+    >
       {getFiltered(teamMembers).map(teamMember => {
         const mentor = teamMembers.find(tm => tm.id === teamMember.mentor_id);
         const manager = teamMembers.find(tm => tm.id === teamMember.manager_id);
@@ -68,4 +74,3 @@ export default connect(
   mapStateToProps,
   { getTeamMembers }
 )(Tab);
-//(withStyles(styles)(Tab));
