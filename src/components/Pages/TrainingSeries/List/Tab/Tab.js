@@ -1,13 +1,12 @@
 // main page for displaying list of all training series
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
-
+import { Link } from "react-router-dom";
 import {
   getTrainingSeries,
   getAllMessages,
   deleteTrainingSeries
 } from "store/actions";
-//import DeleteModal from "components/UI/Modals/deleteModal";
 import history from "history.js";
 
 import { Grid, Typography } from "@material-ui/core/";
@@ -34,7 +33,7 @@ function Tab({
         const tsMessages = messages.filter(msg => {
           return msg.training_series_id === id;
         });
-        let selectedId = tsMessages[0].id;
+        let selectedId = tsMessages.length > 0 ? tsMessages[0].id : null;
         const daysLong = Math.max(...tsMessages.map(m => m.days_from_start));
 
         return (
@@ -102,8 +101,9 @@ function Tab({
               ) : (
                 <Grid item xs={12} align="center">
                   <p>
-                    This training series doesn't have any messages yet. Click on
-                    it to add its first message.
+                    This training series doesn't have any messages yet.{" "}
+                    <Link to={`/home/training-series/${id}`}>Click here</Link>{" "}
+                    to add its first message.
                   </p>
                 </Grid>
               )}
