@@ -27,7 +27,7 @@ function SearchCard(props) {
     handleAdd,
     history
   } = props;
-  const limit = props.limit || 5;
+  const limit = props.limit || 6;
 
   const pagination = { offset, limit, setMax: setItemCount };
   return (

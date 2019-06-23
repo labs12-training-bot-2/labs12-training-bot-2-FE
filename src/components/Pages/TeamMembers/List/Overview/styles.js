@@ -11,8 +11,6 @@ export const ListStyles = styled.ul`
 export const styles = {
   listItem: {
     width: "100%",
-    marginBottom: 0,
-    marginTop: 4,
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
