@@ -10,7 +10,7 @@ export const styles = theme => ({
   paper: {
     width: "100%",
     backgroundColor: theme.palette.background.paper,
-    boxShadow: theme.shadows[5],
+    boxShadow: theme.shadows[2],
     padding: theme.spacing.unit * 4,
     outline: "none",
     margin: "5px auto",
