@@ -118,7 +118,7 @@ export const MemberInfoContainer = styled.div`
 
 export const ButtonContainer = styled.div`
   display: flex;
-  margin-top: 10px;
+  margin: 43px 0;
   justify-content: center;
 `;
 
