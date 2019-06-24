@@ -3,6 +3,7 @@ import React from "react";
 
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
+import moment from "moment";
 
 // Material UI
 import { withStyles } from "@material-ui/core/styles";
@@ -11,6 +12,10 @@ import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
+import ExpansionPanel from "@material-ui/core/ExpansionPanel";
+import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
+import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import {
   createAMessage,
@@ -83,9 +88,11 @@ class MessagePage extends React.Component {
     }, 1000);
   };
 
-
   render() {
     const { classes } = this.props;
+    const sendDay = moment()
+      .add(3, "days")
+      .format("MMM Do");
     return (
       <MainContainer>
         <form
@@ -96,7 +103,7 @@ class MessagePage extends React.Component {
           <Paper className={classes.root}>
             <Typography className={classes.title} variant="h5" gutterBottom>
               Edit Message
-        </Typography>
+            </Typography>
             <MessageContainer>
               <TextField
                 id="standard-name"
@@ -136,6 +143,23 @@ class MessagePage extends React.Component {
                 inputProps={{ min: 1 }}
                 required
               />
+              <ExpansionPanel>
+                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                  <Typography className={classes.heading}>
+                    What is "Days from Start"?
+                  </Typography>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography>
+                    This is the number of days after a training series starts
+                    that this message will be sent. For example, if you assign a
+                    team member to this training series with a start date of
+                    today, and you set this message's "days from start" number
+                    to 3, it will send out on {sendDay}.
+                  </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+
               <CheckBoxWrapper>
                 Send to:{" "}
                 <p
@@ -212,7 +236,7 @@ class MessagePage extends React.Component {
                 onClick={e =>
                   this.props.history.push(
                     `/home/training-series/${
-                    this.state.message.training_series_id
+                      this.state.message.training_series_id
                     }`
                   )
                 }
@@ -241,5 +265,3 @@ export default connect(
     getAllMessages
   }
 )(withStyles(styles)(withRouter(MessagePage)));
-
-

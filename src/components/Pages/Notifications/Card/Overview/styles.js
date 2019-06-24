@@ -12,7 +12,7 @@ export const styles = {
   listItem: {
     width: "100%",
     paddingBottom: 10,
-    paddingTop: 4,
+    paddingTop: 12,
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",

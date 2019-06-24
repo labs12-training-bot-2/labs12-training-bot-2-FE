@@ -72,6 +72,7 @@ export const MessageContainer = styled.div`
 
 export const MainContainer = styled.div`
   margin: 0 auto;
+  margin-left: 20px;
   max-width: 768px;
   /* https://bit.ly/2ElzpZl */
   height: 0.4242px;
