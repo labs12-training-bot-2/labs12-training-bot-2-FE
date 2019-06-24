@@ -118,7 +118,7 @@ export const MemberInfoContainer = styled.div`
 
 export const ButtonContainer = styled.div`
   display: flex;
-  margin: 43px 0;
+  margin: 10px;
   justify-content: center;
 `;
 
@@ -174,9 +174,8 @@ export const SlackButton = styled.button`
     }
   }
   @media (max-width: 590px) {
-      width: 100%;
-      max-width: none;
-      margin: 16px auto 0;
-    }    
+    width: 100%;
+    max-width: none;
+    margin: 16px auto 0;
   }
 `;
