@@ -10,7 +10,7 @@ export const styles = theme => ({
   paper: {
     width: "100%",
     backgroundColor: theme.palette.background.paper,
-    boxShadow: theme.shadows[5],
+    boxShadow: theme.shadows[2],
     padding: theme.spacing.unit * 4,
     outline: "none",
     margin: "5px auto",
@@ -118,7 +118,7 @@ export const MemberInfoContainer = styled.div`
 
 export const ButtonContainer = styled.div`
   display: flex;
-  margin-top: 10px;
+  margin: 10px;
   justify-content: center;
 `;
 
@@ -174,9 +174,8 @@ export const SlackButton = styled.button`
     }
   }
   @media (max-width: 590px) {
-      width: 100%;
-      max-width: none;
-      margin: 16px auto 0;
-    }    
+    width: 100%;
+    max-width: none;
+    margin: 16px auto 0;
   }
 `;

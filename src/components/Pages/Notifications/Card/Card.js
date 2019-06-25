@@ -30,7 +30,7 @@ function Card(props) {
     <MainContainer>
       <Paper
         data-tour="5"
-        style={{ width: props.width || "100%" }}
+        style={{ maxWidth: props.maxWidth || "100%" }}
         className={classes.root}
         elevation={2}
       >

@@ -2,21 +2,14 @@ import styled from "styled-components";
 
 export const styles = theme => ({
   paper: {
-    width: "89%",
+    width: "100%",
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
     outline: "none",
     margin: "5px auto",
-
-    "@media (max-width: 768px)": {
-      width: "89%",
-      margin: "5px auto"
-    },
-
-    "@media (max-width: 480px)": {
-      width: "80%",
-      margin: "5px auto"
+    "@media (max-width: 1300px)": {
+      minWidth: "750px"
     }
   },
   assignButton: {

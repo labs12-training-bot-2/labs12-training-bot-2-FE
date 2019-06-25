@@ -142,7 +142,7 @@ function Add(props) {
         }
       >
         <Paper className={classes.paper}>
-          <Typography variant="title">
+          <Typography variant="h5">
             {teamMember ? "Edit Team Member" : "Add New Team Member"}
           </Typography>
           <Divider className={classes.divider} />

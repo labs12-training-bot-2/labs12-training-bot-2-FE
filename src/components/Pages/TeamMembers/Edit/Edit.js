@@ -66,7 +66,7 @@ function Edit(props) {
       <Grid item xs={12} lg={5}>
         <NotificationsCard
           maxWidth="768px"
-          limit={10}
+          limit={5}
           List={TeamMemberNotifications}
           member_id={match.params.id}
         />

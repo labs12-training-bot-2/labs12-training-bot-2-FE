@@ -53,10 +53,10 @@ class SimpleTabs extends React.Component {
             onChange={this.handleChange}
           >
             <Tab label="Overview" />
-            <Tab label="Team Members" />
-            <Tab label="Training Series" />
-            <Tab label="Notifications" />
-            <Tab label="Responses" />
+            <Tab label="Manage Team Members" />
+            <Tab label="Manage Training Series" />
+            <Tab label="View Notifications" />
+            <Tab label="View Responses" />
           </TabsStyled>
         </AppBar>
       </div>

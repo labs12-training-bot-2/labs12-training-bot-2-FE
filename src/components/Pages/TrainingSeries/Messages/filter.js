@@ -6,7 +6,8 @@ const noSearch = [
   "days_from_start"
 ];
 
-export default ({ ts_id, items, search, setMax }) => {
+export default ({ ts_id, items, search, pagination }) => {
+  const { offset, limit, setMax } = pagination;
   search = search.toLowerCase();
   const filtered = items
     .filter(message => message.training_series_id === parseInt(ts_id, 10))
@@ -23,13 +24,17 @@ export default ({ ts_id, items, search, setMax }) => {
 
   setMax(filtered.length);
 
-  return filtered.sort((a, b) =>
-    a.days_from_start > b.days_from_start
-      ? 1
-      : b.days_from_start > a.days_from_start
-      ? -1
-      : 0
-  );
+  return filtered
+    .filter(
+      (_, i) => i >= offset && i < parseInt(offset, 10) + parseInt(limit, 10)
+    )
+    .sort((a, b) =>
+      a.days_from_start > b.days_from_start
+        ? 1
+        : b.days_from_start > a.days_from_start
+        ? -1
+        : 0
+    );
 };
 // Sample message
 // {
