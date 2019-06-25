@@ -12,7 +12,7 @@ import NotificationsCard from "components/Pages/Notifications/Card";
 import NotificationsOverview from "components/Pages/Notifications/Card/Overview/Overview.js";
 import Responses from "components/Pages/Notifications/Responses";
 import TabNavigation from "./helpers/TabNavigation.js";
-import DektopNavigation from "./helpers/DesktopNavigation.js";
+import DesktopNavigation from "./helpers/DesktopNavigation.js";
 
 import {
   TripleColumn,
@@ -54,7 +54,7 @@ function Dashboard(props) {
         />
       </MobileNav>
       <DesktopNav>
-        <DektopNavigation topTab={topTab} setTopTab={setTopTab} />
+        <DesktopNavigation topTab={topTab} setTopTab={setTopTab} />
       </DesktopNav>
 
       <TripleColumn>
