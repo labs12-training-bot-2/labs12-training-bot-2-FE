@@ -10,15 +10,18 @@ import {
   Typography,
   InputAdornment
 } from "@material-ui/core/";
-
+import Pagination from "material-ui-flat-pagination";
 import { styles, HeaderContainer, HolderText, ListStyles } from "./styles.js";
 
 function Messages(props) {
   const [search, setSearch] = useState("");
   const [isSearching, setIsSearching] = useState(false);
-  const [count, setCount] = useState(0);
+  const [offset, setOffset] = useState(0);
+  const [messagesCount, setMessagesCount] = useState(0);
 
   const { classes, List, ts_id } = props;
+  const limit = props.limit || 4;
+  const pagination = { limit, offset, setMax: setMessagesCount };
 
   return (
     <>
@@ -64,7 +67,7 @@ function Messages(props) {
           }}
         />
       )}
-      {!count && (
+      {!messagesCount && (
         <HolderText>
           <p>You do not have any messages.</p>
         </HolderText>
@@ -76,13 +79,22 @@ function Messages(props) {
               ts_id,
               items,
               search: search.toLowerCase(),
-              setMax: setCount
+              pagination
             })
           }
           search={search.toLowerCase()}
           history={props.history}
         />
       </ListStyles>
+      <div className={classes.footer}>
+        <Pagination
+          limit={limit}
+          offset={offset}
+          total={messagesCount}
+          centerRipple={true}
+          onClick={(e, newOffset) => setOffset(newOffset)}
+        />
+      </div>
     </>
   );
 }

@@ -53,7 +53,7 @@ function Responses(props) {
   return (
     <MainWrapper>
       <HeaderWrapper>
-        <h2>Your Message Responses</h2>
+        <Typography variant="h5">Your Message Responses</Typography>
         <div>
           <Typography
             className={classes.title}
