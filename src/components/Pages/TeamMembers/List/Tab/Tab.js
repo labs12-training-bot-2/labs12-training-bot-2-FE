@@ -39,11 +39,11 @@ function Tab({ user_id, getFiltered, getTeamMembers, teamMembers, classes }) {
                 history.push(`/home/team-member/${teamMember.id}`);
               }}
             >
-              <Typography variant="subtitle1">
+              <Typography noWrap variant="subtitle1">
                 {teamMember.first_name} {teamMember.last_name}
               </Typography>
               <hr />
-              <Typography variant="subtitle2">
+              <Typography noWrap variant="subtitle2">
                 {teamMember.email || (
                   <p style={{ color: "rgba(0,0,0,0.3)" }}>No email assigned</p>
                 )}
@@ -51,8 +51,12 @@ function Tab({ user_id, getFiltered, getTeamMembers, teamMembers, classes }) {
               <Typography variant="overline">
                 {teamMember.phone_number}
               </Typography>
-              <Typography variant="overline">Mentor: {mentorName}</Typography>
-              <Typography variant="overline">Manager: {managerName}</Typography>
+              <Typography noWrap variant="overline">
+                Mentor: {mentorName}
+              </Typography>
+              <Typography noWrap variant="overline">
+                Manager: {managerName}
+              </Typography>
             </div>
             <DeleteModal
               deleteType="teamMember"

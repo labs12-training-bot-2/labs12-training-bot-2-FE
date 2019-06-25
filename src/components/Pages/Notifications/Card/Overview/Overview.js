@@ -70,6 +70,10 @@ function Overview(props) {
             >
               <ListItemIcon>{displayedLogo[name]}</ListItemIcon>
               <ListItemText
+                style={{
+                  overflow: "hidden",
+                  whiteSpace: "nowrap"
+                }}
                 primary={`${subject} | ${series}`}
                 secondary={`${first_name} ${last_name}`}
               />
