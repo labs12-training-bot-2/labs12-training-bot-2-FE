@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const styles = theme => ({
   paper: {
     width: "90%",
+    minHeight: "600px",
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
@@ -39,6 +40,12 @@ export const styles = theme => ({
     marginBottom: 20,
     textAlign: "center",
     color: "lightgray"
+  },
+  footer: {
+    display: "flex",
+    justifyContent: "space-between",
+    position: "sticky",
+    top: "100%"
   }
 });
 

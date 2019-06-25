@@ -81,13 +81,15 @@ function Assign(props) {
           </HolderText>
         </Typography>
       )}
-      <Pagination
-        limit={limit}
-        offset={offset}
-        total={assignedMembers.length}
-        centerRipple={true}
-        onClick={(e, newOffset) => setOffset(newOffset)}
-      />
+      <div className={classes.footer}>
+        <Pagination
+          limit={limit}
+          offset={offset}
+          total={assignedMembers.length}
+          centerRipple={true}
+          onClick={(e, newOffset) => setOffset(newOffset)}
+        />
+      </div>
     </Paper>
   );
 }
