@@ -40,7 +40,9 @@ function Tab({
           <Wrapper key={`container_${id}`}>
             <Grid container spacing={24}>
               <Grid item xs={12}>
-                <Typography variant="h6">{title}</Typography>
+                <Typography noWrap variant="h6">
+                  {title}
+                </Typography>
                 <hr />
               </Grid>
 
