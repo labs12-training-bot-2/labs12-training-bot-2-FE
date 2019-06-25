@@ -20,7 +20,7 @@ function Messages(props) {
   const [messagesCount, setMessagesCount] = useState(0);
 
   const { classes, List, ts_id } = props;
-  const limit = props.limit || 4;
+  const limit = props.limit || 5;
   const pagination = { limit, offset, setMax: setMessagesCount };
 
   return (
