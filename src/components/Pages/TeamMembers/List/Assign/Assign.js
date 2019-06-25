@@ -49,6 +49,7 @@ function Assign(props) {
         <ListStyles key={member.id}>
           <ListItem className={classes.listItem}>
             <ListItemText
+              style={{ overflow: "hidden", whiteSpace: "nowrap" }}
               primary={`Member: ${member.first_name} ${member.last_name}`}
               secondary={`Start Date: ${getStartDate(member.id)}`}
               onClick={e => history.push(`/home/team-member/${member.id}`)}
