@@ -42,7 +42,7 @@ function Assign(props) {
   return (
     <Paper className={classes.paper}>
       <HeaderContainer>
-        <Typography variant="title" className={classes.assignedTitle}>
+        <Typography variant="h5" className={classes.assignedTitle}>
           Assigned Team Members
         </Typography>
         <Button

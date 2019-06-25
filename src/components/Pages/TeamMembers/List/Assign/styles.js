@@ -9,6 +9,7 @@ export const styles = theme => ({
     width: "100%",
     height: 95,
     display: "flex",
+    margin: "3.8px 0",
 
     "@media (max-width: 768px)": {
       width: "100%",

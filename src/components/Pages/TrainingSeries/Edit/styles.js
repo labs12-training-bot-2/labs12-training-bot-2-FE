@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const styles = theme => ({
   paper: {
-    width: "100%",
+    width: "90%",
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
