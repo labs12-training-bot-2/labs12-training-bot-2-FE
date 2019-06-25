@@ -95,6 +95,7 @@ export const styles = theme => ({
 
 export const MainContainer = styled.div`
   margin: 0 auto;
+  padding: 0 1px;
   max-width: ${props => props.maxWidth || "768px"};
   max-height: ${props => props.maxHeight || "none"};
   @media (max-width: 768px) {
@@ -118,7 +119,7 @@ export const MemberInfoContainer = styled.div`
 
 export const ButtonContainer = styled.div`
   display: flex;
-  margin: 10px;
+  margin: 43px 10px;
   justify-content: center;
 `;
 
