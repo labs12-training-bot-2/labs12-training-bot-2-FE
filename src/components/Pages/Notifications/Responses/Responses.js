@@ -97,7 +97,7 @@ function Responses(props) {
                   className={classes.card}
                 >
                   <CardContent>
-                    <Typography variant="h5" component="h2">
+                    <Typography noWrap variant="h5" component="h2">
                       {response.first_name} {response.last_name}
                     </Typography>
 
@@ -110,7 +110,7 @@ function Responses(props) {
                         : "text"}{" "}
                       {ReturnCorrectServiceLogo(response.service)}
                     </Typography>
-                    <Typography component="p">
+                    <Typography noWrap component="p">
                       {response.response}
                       <br />
                     </Typography>
