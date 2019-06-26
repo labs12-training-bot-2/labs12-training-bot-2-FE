@@ -10,6 +10,8 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 import Typography from "@material-ui/core/Typography";
 import SettingsCell from "@material-ui/icons/SettingsCell";
 import Email from "@material-ui/icons/Email";
@@ -23,7 +25,7 @@ import {
 
 function Responses(props) {
   const { classes, responses, getAllResponses: responsesFromProps } = props;
-  const [service, setService] = useState("");
+  const [service, setService] = useState("all");
   const [allResponses, setAllResponses] = useState([]);
 
   useEffect(() => {
@@ -53,25 +55,32 @@ function Responses(props) {
   return (
     <MainWrapper>
       <HeaderWrapper>
-        <Typography variant="h5">Your Message Responses</Typography>
+        <Typography variant="h5">Message Responses</Typography>
         <div>
           <Typography
             className={classes.title}
             color="textSecondary"
             gutterBottom
-          >
-            filter by:
-          </Typography>
-          <select
-            onChange={e => {
-              setService(e.target.value);
-            }}
-          >
-            <option value="">all</option>
-            <option value="slack">slack</option>
-            <option value="twillo">text</option>
-            <option value="sendgrid">email</option>
-          </select>
+          />
+          <FormControl className={classes.formControl}>
+            <Select
+              native
+              className={classes.selection}
+              value={service}
+              onChange={e => {
+                setService(e.target.value);
+              }}
+              inputProps={{
+                id: "kind-selector",
+                label: "Filter Selector"
+              }}
+            >
+              <option value={"all"}>All</option>
+              <option value={"twilio"}>Text</option>
+              <option value={"sendgrid"}>Email</option>
+              <option value={"slack"}>Slack</option>
+            </Select>
+          </FormControl>
         </div>
       </HeaderWrapper>
 
