@@ -15,6 +15,12 @@ export const styles = {
   },
   pos: {
     marginBottom: 12
+  },
+  selection: {
+    margin: "0 10px",
+    "@media (max-width: 450px)": {
+      fontSize: "0.9rem"
+    }
   }
 };
 
@@ -31,9 +37,9 @@ export const MainWrapper = styled(Paper)`
 `;
 export const HeaderWrapper = styled.div`
   display: flex;
+  justify-content: space-between;
   align-items: flex-end;
   padding: 10px;
-  border-bottom: 1px solid gray;
   @media (max-width: 700px) {
     justify-content: space-between;
   }
@@ -43,12 +49,6 @@ export const HeaderWrapper = styled.div`
     @media (max-width: 700px) {
       margin: 0 20px 0 10px;
     }
-  }
-  select {
-    width: 125px;
-    margin-left: 10px;
-    height: 25px;
-    border: 1px solid black;
   }
   div {
     display: flex;

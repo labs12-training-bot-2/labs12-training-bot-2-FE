@@ -54,6 +54,10 @@ function TeamMember({
               <ListItemIcon>{displayedLogo[name]}</ListItemIcon>
 
               <ListItemText
+                style={{
+                  overflow: "hidden",
+                  whiteSpace: "nowrap"
+                }}
                 className={classes.item}
                 primary={`${subject} | ${series}`}
                 secondary={`${first_name} ${last_name}`}

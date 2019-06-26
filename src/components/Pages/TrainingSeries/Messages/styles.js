@@ -19,6 +19,12 @@ export const styles = theme => ({
   },
   textField: {
     width: "60%"
+  },
+  footer: {
+    display: "flex",
+    justifyContent: "space-between",
+    position: "sticky",
+    top: "100%"
   }
 });
 

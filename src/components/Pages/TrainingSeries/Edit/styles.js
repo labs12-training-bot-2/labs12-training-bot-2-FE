@@ -8,6 +8,7 @@ export const styles = theme => ({
     padding: theme.spacing.unit * 4,
     outline: "none",
     margin: "5px auto",
+    minHeight: "600px",
 
     "@media (max-width: 1300px)": {
       minWidth: "750px"
@@ -50,4 +51,6 @@ export const TrainingSeriesTitle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  overflow: hidden;
+  white-space: pre;
 `;

@@ -44,6 +44,10 @@ function Overview({
         return (
           <ListItem key={id} component="li" className={classes.listItem}>
             <ListItemText
+              style={{
+                overflow: "hidden",
+                whiteSpace: "nowrap"
+              }}
               primary={title}
               secondary={`Messages: ${
                 tsMessages.length

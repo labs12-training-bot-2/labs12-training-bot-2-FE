@@ -33,6 +33,7 @@ function Messages(props) {
         <ListItemContainer key={message.id}>
           <ListItem className={classes.listItem}>
             <ListItemText
+              style={{ overflow: "hidden", whiteSpace: "nowrap" }}
               primary={message.subject}
               secondary={message.body}
               className={classes.listItemText}

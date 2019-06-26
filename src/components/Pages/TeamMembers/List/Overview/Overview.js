@@ -31,6 +31,10 @@ function Overview({
           return (
             <SingleMember key={id} component="li" className={classes.listItem}>
               <ListItemText
+                style={{
+                  overflow: "hidden",
+                  whiteSpace: "nowrap"
+                }}
                 primary={first_name + " " + last_name}
                 secondary={`Job: ${job_description}`}
                 onClick={() => history.push(`/home/team-member/${id}`)}

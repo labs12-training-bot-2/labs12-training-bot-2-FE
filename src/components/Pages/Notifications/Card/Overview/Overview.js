@@ -32,6 +32,13 @@ function Overview(props) {
     getNotifications();
   }, [getNotifications]);
 
+  // Placeholder function to prevent text overflow of displayed fields
+  // as too many conflicting styles being applied to the three instances
+  // of the same notifications component throughout app without one breaking
+  const preventOverflow = (str, limit) => {
+    return str.length > limit ? str.slice(0, limit) + "..." : str;
+  };
+
   const displayedLogo = {
     twilio: <TextsmsOutlined />,
     sendgrid: <EmailOutlined />,
@@ -70,8 +77,15 @@ function Overview(props) {
             >
               <ListItemIcon>{displayedLogo[name]}</ListItemIcon>
               <ListItemText
-                primary={`${subject} | ${series}`}
-                secondary={`${first_name} ${last_name}`}
+                style={{
+                  overflow: "hidden",
+                  whiteSpace: "nowrap"
+                }}
+                primary={`${preventOverflow(subject, 20)} | ${preventOverflow(
+                  series,
+                  20
+                )}`}
+                secondary={`${preventOverflow(first_name + last_name, 40)}`}
               />
               <Typography className={classes.send_date}>
                 {filters.status === "pending" ? "Send Date" : "Sent on"}
